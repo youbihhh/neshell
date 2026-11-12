@@ -93,7 +93,7 @@ export default function Footer() {
                 className="flex gap-3 transition-colors hover:text-orange"
               >
                 <Icon name="mail" className="h-5 w-5 shrink-0 text-orange" />
-                {site.email}
+                <span className="min-w-0 wrap-anywhere">{site.email}</span>
               </a>
             </li>
           </ul>

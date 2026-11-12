@@ -35,7 +35,7 @@ export default async function ContactPage() {
 
       <section className="bg-zinc-50 py-20 text-zinc-900 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[2fr_3fr] lg:gap-16 lg:px-8">
-          <div>
+          <div className="min-w-0">
             <SectionHeading
               eyebrow="Get in touch"
               title="Let's talk about your project"
@@ -49,11 +49,12 @@ export default async function ContactPage() {
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-orange text-white">
                       <Icon name={item.icon} className="h-5 w-5" />
                     </span>
-                    <span>
+                    {/* min-w-0 + overflow-wrap let a long email wrap instead of widening the box */}
+                    <span className="min-w-0">
                       <span className="block text-xs font-semibold uppercase tracking-widest text-zinc-500">
                         {item.label}
                       </span>
-                      <span className="mt-0.5 block font-medium">{item.value}</span>
+                      <span className="mt-0.5 block font-medium wrap-anywhere">{item.value}</span>
                     </span>
                   </>
                 );
