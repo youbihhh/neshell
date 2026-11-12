@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": "Portfolio projects shown on the Projects page and the homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "category": {
+      "type": "enumeration",
+      "enum": ["Residential", "Commercial", "Renovation", "Construction"],
+      "required": true
+    },
+    "progress": {
+      "type": "enumeration",
+      "enum": ["Completed", "Ongoing"],
+      "default": "Completed",
+      "required": true
+    },
+    "location": { "type": "string", "required": true },
+    "year": { "type": "integer", "required": true },
+    "summary": { "type": "text", "required": true },
+    "image": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] }
+  }
+}
